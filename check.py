@@ -21,12 +21,8 @@ def check(stackValu, input):
 def isValidEntry(input, stack):
     if(input == ")" or input == "}" or input == "]"):
         popValue = stack.pop()
-        # print("閉じかっこ: " + input)
-        # print("popValue: " + popValue)
         result = check(popValue, input)
-        # print(result)
         if(not result):
-            # print("false")
             return False
         else:
             return True
@@ -43,19 +39,15 @@ def stack(input):
     count = 0
     for i in input:
         if(i == "(" or i == "[" or i == "{"):
-            # print("stack: " + i)
             value = convert(i)
             stack.append(value)
-            # print("convert stack: " + str(stack))
             count += 1
-            # print(count)
             continue
 
         else:
             result = isValidEntry(i, stack)
             if(result):
                 count += 1
-                # print(count)
             else:
                 print("false")
                 break
